@@ -15,18 +15,21 @@ import formatValue from '../../utils/formatValue';
 
 import { useCart } from '../../hooks/cart';
 
-// Calculo do total
-// Navegação no clique do TouchableHighlight
-
 const FloatingCart: React.FC = () => {
   const { products } = useCart();
 
   const navigation = useNavigation();
 
   const cartTotal = useMemo(() => {
-    // TODO RETURN THE SUM OF THE PRICE FROM ALL ITEMS IN THE CART
+    const cartTotalPrice = products.reduce(
+      (accumulator, { price, quantity }) => {
+        // eslint-disable-next-line no-param-reassign
+        return accumulator + price * quantity;
+      },
+      0,
+    );
 
-    return formatValue(0);
+    return formatValue(cartTotalPrice);
   }, [products]);
 
   const totalItensInCart = useMemo(() => {
