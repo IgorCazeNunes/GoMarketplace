@@ -47,7 +47,7 @@ const Cart: React.FC = () => {
   }
 
   const cartTotal = useMemo(() => {
-    const totalQuantity = products.reduce(
+    const cartTotalPrice = products.reduce(
       (accumulator, { price, quantity }) => {
         // eslint-disable-next-line no-param-reassign
         return accumulator + price * quantity;
@@ -55,7 +55,7 @@ const Cart: React.FC = () => {
       0,
     );
 
-    return formatValue(totalQuantity);
+    return formatValue(cartTotalPrice);
   }, [products]);
 
   const totalItensInCart = useMemo(() => {
