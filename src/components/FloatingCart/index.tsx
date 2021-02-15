@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -33,9 +33,12 @@ const FloatingCart: React.FC = () => {
   }, [products]);
 
   const totalItensInCart = useMemo(() => {
-    // TODO RETURN THE SUM OF THE QUANTITY OF THE PRODUCTS IN THE CART
+    const totalQuantity = products.reduce((accumulator, { quantity }) => {
+      // eslint-disable-next-line no-param-reassign
+      return accumulator + quantity;
+    }, 0);
 
-    return 0;
+    return totalQuantity;
   }, [products]);
 
   return (
