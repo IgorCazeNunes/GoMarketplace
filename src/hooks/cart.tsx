@@ -40,18 +40,6 @@ const CartProvider: React.FC = ({ children }) => {
     loadProducts();
   }, []);
 
-  const addToCart = useCallback(
-    async product => {
-      setProducts([...products, { ...product, quantity: 1 }]);
-
-      await AsyncStorage.setItem(
-        '@GoMarketplace:products',
-        JSON.stringify(products),
-      );
-    },
-    [products, setProducts],
-  );
-
   const increment = useCallback(
     async id => {
       const incrementedProducts = products.map(product => {
@@ -98,6 +86,25 @@ const CartProvider: React.FC = ({ children }) => {
       );
     },
     [products],
+  );
+
+  const addToCart = useCallback(
+    async product => {
+      const [existentProduct] = products.filter(p => p.id === product.id);
+
+      if (existentProduct) {
+        increment(existentProduct.id);
+        return;
+      }
+
+      setProducts([...products, { ...product, quantity: 1 }]);
+
+      await AsyncStorage.setItem(
+        '@GoMarketplace:products',
+        JSON.stringify(products),
+      );
+    },
+    [increment, products, setProducts],
   );
 
   const value = React.useMemo(
