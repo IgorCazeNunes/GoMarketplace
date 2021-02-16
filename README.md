@@ -1,5 +1,5 @@
 <h1 align="center">
-  ReactDex
+  GoMarketplace
 </h1>
 
 # Indice
