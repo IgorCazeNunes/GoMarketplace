@@ -53,7 +53,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [React-Navigation](https://www.npmjs.com/package/react-navigation)
 - [Async-Storage](https://www.npmjs.com/package/@react-native-community/async-storage)
 - [Axios](https://www.npmjs.com/package/axios)
-- [Intl](https://www.npmjs.com/package/intl)
 - [Json-Server](https://www.npmjs.com/package/json-server)
 - [Styled-components](https://www.npmjs.com/package/styled-components)
 
