@@ -15,11 +15,21 @@
 
 ## 📱 Preview
 
-###  Dashboard
-<img src='github/01 - Dashboard.png' alt='GoMarketplace Dashboard Preview' width=360 />
+<h3 align="center">
+  Dashboard
+</h3>
 
-### Cart
-<img src='github/02 - Cart.png' alt='GoMarketplace Cart Preview' width=360/>
+<h3 align="center">
+  <img src='github/01 - Dashboard.png' alt='GoMarketplace Dashboard Preview' width=360 />
+</h3>
+
+<h3 align="center">
+  Cart
+</h3>
+
+<h3 align="center">
+  <img src='github/02 - Cart.png' alt='GoMarketplace Cart Preview' width=360/>
+</h3>
 
 ---
 
